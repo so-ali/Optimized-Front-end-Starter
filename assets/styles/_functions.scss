@@ -1,0 +1,70 @@
+@use "sass:map";
+@use "variables";
+
+// Box Shadow attributes builder.
+@mixin __box_shadow($value, $list: false) {
+  @if $list == true {
+    $value: get-global-shadow($value);
+  }
+  box-shadow: $value;
+  -webkit-box-shadow: $value;
+}
+
+// Border Radius attributes builder.
+@mixin __border_radius($value: "medium", $list: false) {
+  @if $list == true {
+    $value: get-global-radius($value);
+  }
+  border-radius: $value;
+  -webkit-border-radius: $value;
+}
+
+// Transition attributes builder.
+@mixin __transition($value: variables.$transitionDelay) {
+  transition: $value;
+  -webkit-transition: $value;
+}
+
+// Get Global Color.
+@function get-global-color($name,$mode: "normal",$alpha: 1) {
+  @if $alpha < 1 {
+    $color: map-get(variables.$colors, $name);
+    @return rgba(map-get($color, $mode), $alpha)
+  }
+  @return var(--color-#{$name}-#{$mode});
+}
+
+// Get Global Font.
+@function get-global-font($name: "normal",$value: "size") {
+  @return var(--typography-#{$name}-#{$value});
+}
+
+// Get Global Space.
+@function get-global-space($name: "medium") {
+  @return var(--space-#{$name});
+}
+
+// Get Global Shadow.
+@function get-global-shadow($name: "medium") {
+  @return var(--shadow-#{$name});
+}
+
+// Get Global Shadow.
+@function get-global-radius($name: "medium") {
+  @return var(--radius-#{$name});
+}
+
+// Get Global Layout.
+@function get-global-layout($name: "gap-x") {
+  @return var(--layout-#{$name});
+}
+
+// Get Global Button Size.
+@function get-global-button-size($name: "normal") {
+  @return var(--button-size-#{$name});
+}
+
+// Get Global Input Size.
+@function get-global-input-size($name: "normal") {
+  @return var(--input-size-#{$name});
+}

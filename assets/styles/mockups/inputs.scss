@@ -1,0 +1,84 @@
+@use "../variables";
+@import "../functions";
+
+%form-input {
+  display: block;
+  padding: get-global-input-size('normal');
+  background: get-global-color('white');
+  color: get-global-color('white','text');
+  font-size: get-global-font('normal','size');
+  text-decoration: none;
+  border: none;
+  outline: none;
+  @include __border_radius("medium", true);
+  @include __transition();
+  @include __box_shadow(none);
+
+  &:hover, &:focus{
+    background: get-global-color('white','hover');
+    color: get-global-color('white','hover-text');
+  }
+
+  &::placeholder {
+    color: get-global-color('white','text');
+  }
+
+  &::-ms-input-placeholder {
+    color: get-global-color('white','text');
+  }
+}
+
+.form-input {
+  @extend %form-input;
+
+  // Filled style.
+  @each $color,$value in variables.$colors {
+    &--#{$color} {
+      background: get-global-color($color,'normal');
+      color: get-global-color($color,'text');
+
+      &:hover, &:focus{
+        background: get-global-color($color,'hover');
+        color: get-global-color($color,'hover-text');
+      }
+
+      &::placeholder {
+        color: get-global-color($color,'text');
+      }
+
+      &::-ms-input-placeholder {
+        color: get-global-color($color,'text');
+      }
+    }
+  }
+
+  // Outlined style.
+  @each $color,$value in variables.$colors {
+    &--outlined-#{$color} {
+      background: transparent;
+      border: get-global-color($color,'normal') 1px solid;
+      color: #555;
+
+      &:hover, &:focus{
+        background: transparent;
+        border: get-global-color($color,'hover') 1px solid;
+        box-shadow: get-global-color($color,'hover') 0 0 0 1px;
+        color: #333;
+      }
+
+      &::placeholder {
+        color: #555;
+      }
+
+      &::-ms-input-placeholder {
+        color: #555;
+      }
+    }
+  }
+
+  @each $size,$value in variables.$inputSizes {
+    &--#{$size} {
+      padding: get-global-input-size($size);
+    }
+  }
+}

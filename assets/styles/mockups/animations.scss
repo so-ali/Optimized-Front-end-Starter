@@ -1,0 +1,9 @@
+@use "../variables";
+
+.transition-delay {
+  transition: variables.$transitionDelay;
+
+  &--long {
+    transition: variables.$transitionLongDelay;
+  }
+}

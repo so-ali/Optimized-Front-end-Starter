@@ -1,0 +1,23 @@
+@use "../variables";
+@import "../functions";
+
+.bg, .background{
+  @each $color,$value in variables.$colors{
+    &-#{$color} {
+      background-color: get-global-color($color,'normal') !important;
+    }
+    &-#{$color}-hover {
+      background-color: get-global-color($color,'hover') !important;
+    }
+  }
+}
+
+.text-color{
+  @each $color, $value in variables.$colors{
+    @each $key, $code in $value{
+      &-#{$color}-#{$key},&-hover-#{$color}-#{$key}:hover {
+        color: get-global-color($color,$key) !important;
+      }
+    }
+  }
+}

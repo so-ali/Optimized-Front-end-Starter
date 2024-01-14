@@ -1,0 +1,27 @@
+@use "../variables";
+@import "../functions";
+
+.text-size {
+  @each $name, $value in variables.$typography {
+    &-#{$name} {
+      font-size: get-global-font($name, "size");
+      font-weight: get-global-font($name, "weight");
+      line-height: get-global-font($name, "height");
+      font-family: get-global-font($name, "family");
+    }
+  }
+}
+
+@for $i from 1 through 3 {
+  h#{$i}{
+    @extend .text-size-heading-#{$i};
+  }
+}
+
+.text-align{
+  @each $align in "left","center","right"{
+    &-#{$align} {
+      text-align: #{$align};
+    }
+  }
+}

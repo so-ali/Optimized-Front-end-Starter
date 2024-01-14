@@ -1,0 +1,63 @@
+@use "../variables";
+@import "../functions";
+
+%form-button {
+  display: inline-flex;
+  padding: get-global-button-size('normal');
+  background: get-global-color('primary');
+  color: get-global-color('primary','text');
+  font-size: variables.$baseSize;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  @include __border_radius("medium", true);
+  @include __transition();
+  @include __box_shadow(none);
+
+  &:hover{
+    background: get-global-color('primary','hover');
+    color: get-global-color('primary','hover-text');
+  }
+}
+
+.button {
+  @extend %form-button;
+
+  &:focus:not(:hover){
+    outline: 2px solid #000;
+  }
+
+  // Filled style.
+  @each $color,$value in variables.$colors {
+    &--#{$color} {
+      background: get-global-color($color,'normal');
+      color: get-global-color($color,'text');
+
+      &:hover{
+        background: get-global-color($color,'hover');
+        color: get-global-color($color,'hover-text');
+      }
+    }
+  }
+
+  // Outlined style.
+  @each $color,$value in variables.$colors {
+    &--outlined-#{$color} {
+      background: transparent;
+      border: get-global-color($color,'normal') 1px solid;
+      color: get-global-color($color,'normal');
+
+      &:hover{
+        background: get-global-color($color,'hover');
+        border: get-global-color($color,'hover') 1px solid;
+        color: get-global-color($color,'hover-text');
+      }
+    }
+  }
+
+  @each $size,$value in variables.$buttonSizes {
+    &--#{$size} {
+      padding: get-global-button-size($size);
+    }
+  }
+}

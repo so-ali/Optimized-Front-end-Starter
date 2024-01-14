@@ -1,0 +1,7 @@
+@import "../functions";
+
+.product-card{
+  background-color: get-global-color("primary");
+  color: get-global-color("primary",'text');
+  padding: get-global-space('medium');
+}

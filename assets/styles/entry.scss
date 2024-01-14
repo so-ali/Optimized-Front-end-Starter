@@ -1,0 +1,19 @@
+// Importing setup configs.
+@import "setup";
+
+// Importing the Bootstrap slices.
+@import "bootstrap/scss/bootstrap-reboot";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/bootstrap-grid";
+
+// Importing mockups.
+@import "mockups/buttons";
+@import "mockups/spaces";
+@import "mockups/typography";
+@import "mockups/colors";
+@import "mockups/animations";
+@import "mockups/inputs";
+@import "mockups/borders";
+
+
+@import "components/product-card";

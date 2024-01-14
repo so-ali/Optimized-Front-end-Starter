@@ -1,0 +1,71 @@
+@use "../variables";
+
+.padding,.p{
+  @each $size, $value in variables.$spaces{
+    &-#{$size} {
+      padding: $value;
+    }
+    &y-#{$size} {
+      padding-top: $value;
+      padding-bottom: $value;
+    }
+    &x-#{$size} {
+      padding-left: $value;
+      padding-right: $value;
+    }
+    &l-#{$size} {
+      padding-left: $value;
+    }
+    &r-#{$size} {
+      padding-right: $value;
+    }
+    &t-#{$size} {
+      padding-top: $value;
+    }
+    &b-#{$size} {
+      padding-bottom: $value;
+    }
+  }
+}
+
+.margin,.m{
+  @each $size, $value in variables.$spaces{
+    &-#{$size} {
+      margin: $value;
+    }
+    &y-#{$size} {
+      margin-top: $value;
+      margin-bottom: $value;
+    }
+    &x-#{$size} {
+      margin-left: $value;
+      margin-right: $value;
+    }
+    &l-#{$size} {
+      margin-left: $value;
+    }
+    &r-#{$size} {
+      margin-right: $value;
+    }
+    &t-#{$size} {
+      margin-top: $value;
+    }
+    &b-#{$size} {
+      margin-bottom: $value;
+    }
+  }
+}
+
+.gap,.g{
+  @each $size, $value in variables.$spaces{
+    &-#{$size} {
+      gap: $value;
+    }
+    &-y-#{$size} {
+      row-gap: $value;
+    }
+    &-x-#{$size} {
+      column-gap: $value;
+    }
+  }
+}

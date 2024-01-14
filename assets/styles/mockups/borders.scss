@@ -1,0 +1,38 @@
+@use "../variables";
+@import "../functions";
+
+$aligns: "top", "right", "bottom", "left";
+$edgeAligns: "top-left", "top-right", "bottom-right", "bottom-left";
+
+.border, .b {
+  @each $color, $value in variables.$colors {
+    &-#{$color} {
+      border: get-global-color($color) 1px solid;
+    }
+    @each $align in $aligns {
+      &-#{$align}-#{$color} {
+        border-#{$align}: get-global-color($color) 1px solid;
+      }
+    }
+  }
+
+  @each $name, $value in variables.$radius {
+    &-radius-#{$name} {
+      border-radius: get-global-radius($name);
+    }
+    @each $align in $edgeAligns {
+      &-radius-#{$align}-#{$name} {
+        border-#{$align}-radius: get-global-radius($name);
+      }
+    }
+  }
+}
+
+@each $shadow, $value in variables.$shadows{
+  .box-shadow-#{$shadow}{
+    box-shadow: get-global-shadow($shadow);
+  }
+  .text-shadow-#{$shadow}{
+    text-shadow: get-global-shadow($shadow);
+  }
+}

@@ -1,0 +1,74 @@
+$baseSize: 16px;
+$transitionDelay: 0.2s;
+$transitionLongDelay: 0.4s;
+
+$colors: (
+        "primary": ("normal": #03A9F4, "hover": #039BE5, "text": #fff, "hover-text": #fff),
+        "secondary": ("normal": #FFCA28, "hover": #FFC107, "text": #111, "hover-text": #000),
+        "accent": ("normal": #cb0468, "hover": #b9035f, "text": #fff, "hover-text": #fff),
+        "white": ("normal": #fff, "hover": #eee, "text": #333, "hover-text": #222),
+        "gray": ("normal": #eee, "hover": #ddd, "text": #333, "hover-text": #222),
+  // You can add more colors here.
+);
+
+$spaces: (
+        "small": 0.5rem,
+        "medium": 1rem,
+        "medium-large": 1.5rem,
+        "large": 2rem,
+        "heavy": 4rem,
+        "custom-1": 10rem,
+  // You can add more space sizes here.
+);
+
+$radius: (
+        "small": 5px,
+        "medium": 10px,
+        "large": 30px,
+        "rounded": 100%,
+);
+
+$shadows: (
+        "small": rgba(0, 0, 0, 0.05) 0 2px 3px,
+        "medium": rgba(0, 0, 0, 0.1) 0 3px 6px,
+        "large": rgba(0, 0, 0, 0.1) 0 6px 12px,
+);
+
+$typography: (
+        "small": ("size": 0.875rem, "height": 1.5rem, "weight": 300, "family": inherit),
+        "normal": ("size": 1rem, "height": 2.2rem, "weight": 400, "family": inherit),
+        "heading-1": ("size": 2.125rem, "height": 2.2rem, "weight": 700, "family": inherit),
+        "heading-2": ("size": 1.875rem, "height": 2.2rem, "weight": 600, "family": inherit),
+        "heading-3": ("size": 1.5rem, "height": 2.2rem, "weight": 500, "family": inherit),
+        "heading-4": ("size": 1.25rem, "height": 2.2rem, "weight": 400, "family": inherit),
+        "heading-5": ("size": 1.125rem, "height": 2.2rem, "weight": 400, "family": inherit),
+        "heading-6": ("size": 1rem, "height": 2.2rem, "weight": 400, "family": inherit),
+        "custom-1": ("size": 2.5rem, "height": 5rem, "weight": 750, "family": inherit),
+  // You can add more typography sets here.
+);
+
+$layout: (
+        "gap-x": 1.5rem,
+        "gap-y": 1.5rem,
+);
+
+$breakpoints: (
+        "xs": 0,
+        "sm": 576px,
+        "md": 768px,
+        "lg": 992px,
+        "xl": 1200px,
+        "xxl": 1400px
+);
+
+$buttonSizes: (
+        "small": 0.25rem 1rem,
+        "normal": 0.5rem 1.5rem,
+        "large": 0.625rem 2rem,
+);
+
+$inputSizes: (
+        "small": 0.25rem 0.75rem,
+        "normal": 0.5rem 1rem,
+        "large": 0.625rem 1.25rem,
+);

@@ -1,0 +1,38 @@
+@use "variables";
+:root {
+  @each $baseName, $color in variables.$colors {
+    @each $modeName, $value in $color {
+      --color-#{$baseName}-#{$modeName}: #{$value};
+    }
+  }
+
+  @each $name, $value in variables.$spaces {
+    --space-#{$name}: #{$value};
+  }
+
+  @each $name, $value in variables.$radius {
+    --radius-#{$name}: #{$value};
+  }
+
+  @each $name, $value in variables.$shadows {
+    --shadow-#{$name}: #{$value};
+  }
+
+  @each $baseName, $font in variables.$typography {
+    @each $modeName, $value in $font {
+      --typography-#{$baseName}-#{$modeName}: #{$value};
+    }
+  }
+
+  @each $name, $value in variables.$layout {
+    --layout-#{$name}: #{$value};
+  }
+
+  @each $name, $value in variables.$buttonSizes {
+    --button-size-#{$name}: #{$value};
+  }
+
+  @each $name, $value in variables.$inputSizes {
+    --input-size-#{$name}: #{$value};
+  }
+}
