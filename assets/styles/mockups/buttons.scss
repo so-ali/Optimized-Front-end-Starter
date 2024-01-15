@@ -3,9 +3,10 @@
 
 %form-button {
   display: inline-flex;
+  gap: 0.5rem;
   padding: get-global-button-size('normal');
-  background: get-global-color('primary');
-  color: get-global-color('primary','text');
+  background: get-global-button-color('default');
+  color: get-global-button-color('default','text');
   font-size: variables.$baseSize;
   text-decoration: none;
   border: none;
@@ -15,8 +16,8 @@
   @include __box_shadow(none);
 
   &:hover{
-    background: get-global-color('primary','hover');
-    color: get-global-color('primary','hover-text');
+    background: get-global-button-color('default','hover');
+    color: get-global-button-color('default','hover-text');
   }
 }
 
@@ -28,29 +29,44 @@
   }
 
   // Filled style.
-  @each $color,$value in variables.$colors {
+  @each $color,$value in variables.$buttonColors {
     &--#{$color} {
-      background: get-global-color($color,'normal');
-      color: get-global-color($color,'text');
+      background: get-global-button-color($color,'normal');
+      color: get-global-button-color($color,'text');
 
       &:hover{
-        background: get-global-color($color,'hover');
-        color: get-global-color($color,'hover-text');
+        background: get-global-button-color($color,'hover');
+        color: get-global-button-color($color,'hover-text');
       }
     }
   }
 
   // Outlined style.
-  @each $color,$value in variables.$colors {
+  @each $color,$value in variables.$buttonColors {
     &--outlined-#{$color} {
       background: transparent;
-      border: get-global-color($color,'normal') 1px solid;
-      color: get-global-color($color,'normal');
+      border: get-global-button-color($color,'normal') 1px solid;
+      color: get-global-button-color($color,'normal');
 
       &:hover{
-        background: get-global-color($color,'hover');
-        border: get-global-color($color,'hover') 1px solid;
-        color: get-global-color($color,'hover-text');
+        background: get-global-button-color($color,'hover');
+        border: get-global-button-color($color,'hover') 1px solid;
+        color: get-global-button-color($color,'hover-text');
+      }
+    }
+  }
+
+  // Transparent style.
+  @each $color,$value in variables.$buttonColors {
+    &--transparent-#{$color} {
+      background: transparent;
+      border: transparent;
+      color: get-global-button-color($color,'normal');
+
+      &:hover{
+        background: transparent;
+        border: transparent;
+        color: get-global-button-color($color,'hover');
       }
     }
   }

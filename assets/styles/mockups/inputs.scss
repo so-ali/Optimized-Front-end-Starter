@@ -4,8 +4,8 @@
 %form-input {
   display: block;
   padding: get-global-input-size('normal');
-  background: get-global-color('white');
-  color: get-global-color('white','text');
+  background: get-global-input-color('default');
+  color: get-global-input-color('default','text');
   font-size: get-global-font('normal','size');
   text-decoration: none;
   border: none;
@@ -15,16 +15,16 @@
   @include __box_shadow(none);
 
   &:hover, &:focus{
-    background: get-global-color('white','hover');
-    color: get-global-color('white','hover-text');
+    background: get-global-input-color('default','hover');
+    color: get-global-input-color('default','hover-text');
   }
 
   &::placeholder {
-    color: get-global-color('white','text');
+    color: get-global-input-color('default','text');
   }
 
   &::-ms-input-placeholder {
-    color: get-global-color('white','text');
+    color: get-global-input-color('default','text');
   }
 }
 
@@ -32,37 +32,37 @@
   @extend %form-input;
 
   // Filled style.
-  @each $color,$value in variables.$colors {
+  @each $color,$value in variables.$inputColors {
     &--#{$color} {
-      background: get-global-color($color,'normal');
-      color: get-global-color($color,'text');
+      background: get-global-input-color($color,'normal');
+      color: get-global-input-color($color,'text');
 
       &:hover, &:focus{
-        background: get-global-color($color,'hover');
-        color: get-global-color($color,'hover-text');
+        background: get-global-input-color($color,'hover');
+        color: get-global-input-color($color,'hover-text');
       }
 
       &::placeholder {
-        color: get-global-color($color,'text');
+        color: get-global-input-color($color,'text');
       }
 
       &::-ms-input-placeholder {
-        color: get-global-color($color,'text');
+        color: get-global-input-color($color,'text');
       }
     }
   }
 
   // Outlined style.
-  @each $color,$value in variables.$colors {
+  @each $color,$value in variables.$inputColors {
     &--outlined-#{$color} {
       background: transparent;
-      border: get-global-color($color,'normal') 1px solid;
+      border: get-global-input-color($color,'normal') 1px solid;
       color: #555;
 
       &:hover, &:focus{
         background: transparent;
-        border: get-global-color($color,'hover') 1px solid;
-        box-shadow: get-global-color($color,'hover') 0 0 0 1px;
+        border: get-global-input-color($color,'hover') 1px solid;
+        box-shadow: get-global-input-color($color,'hover') 0 0 0 1px;
         color: #333;
       }
 
@@ -79,6 +79,31 @@
   @each $size,$value in variables.$inputSizes {
     &--#{$size} {
       padding: get-global-input-size($size);
+    }
+  }
+}
+
+.form-input-group {
+  display: flex;
+  gap: 0.5rem;
+
+  .form-input, .fill-item{
+    flex: 1;
+  }
+
+  &--floating {
+    position: relative;
+
+    .group-button {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &--left{
+        right: auto;
+        left: 0;
+      }
     }
   }
 }

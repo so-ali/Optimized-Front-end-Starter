@@ -21,18 +21,18 @@
     <h2 class="mb-large">Colors</h2>
     <table>
         <tr>
-            <td class="padding-medium"><h3 class="text-color-primary-normal">Text Color Primary</h3></td>
-            <td class="padding-medium"><h3 class="text-color-secondary-normal">Text Color Secondary</h3></td>
-            <td class="padding-medium"><h3 class="text-color-accent-normal">Text Color Accent</h3></td>
+            <td class="padding-medium"><h3 class="text-color-primary">Text Color Primary</h3></td>
+            <td class="padding-medium"><h3 class="text-color-secondary">Text Color Secondary</h3></td>
+            <td class="padding-medium"><h3 class="text-color-accent">Text Color Accent</h3></td>
         </tr>
         <tr>
-            <td class="padding-medium"><h3 class="text-color-hover-primary-normal">Text Color Primary In Hover</h3></td>
-            <td class="padding-medium"><h3 class="text-color-hover-secondary-normal">Text Color Secondary In Hover</h3></td>
-            <td class="padding-medium"><h3 class="text-color-hover-accent-normal">Text Color Accent In Hover</h3></td>
+            <td class="padding-medium"><h3 class="text-color-hover-primary">Text Color Primary In Hover</h3></td>
+            <td class="padding-medium"><h3 class="text-color-hover-secondary">Text Color Secondary In Hover</h3></td>
+            <td class="padding-medium"><h3 class="text-color-hover-accent">Text Color Accent In Hover</h3></td>
         </tr>
         <tr>
-            <td class="padding-medium bg-primary"><h3 class="text-color-accent-text">Background Primary</h3></td>
-            <td class="padding-medium bg-secondary"><h3 class="text-color-accent-text">Background Secondary</h3></td>
+            <td class="padding-medium bg-primary bg-hover-secondary transition-delay--long"><h3 class="text-color-accent-text">Background Primary</h3></td>
+            <td class="padding-medium bg-secondary bg-hover-primary transition-delay"><h3 class="text-color-accent-text">Background Secondary</h3></td>
             <td class="padding-medium bg-accent"><h3 class="text-color-accent-text">Background Accent</h3></td>
         </tr>
     </table>
@@ -54,6 +54,9 @@
         <a href="#" class="button button--outlined">Hello World!</a>
         <a href="#" class="button button--outlined-secondary">Hello World!</a>
         <a href="#" class="button button--outlined-accent">Hello World!</a>
+        <a href="#" class="button button--transparent">Hello World!</a>
+        <a href="#" class="button button--transparent-secondary">Hello World!</a>
+        <a href="#" class="button button--transparent-accent">Hello World!</a>
     </p>
     <p>
         <a href="#" class="button button--gray button--large">Hello World!</a>
@@ -66,34 +69,51 @@
 </div>
 <div class="p-large">
     <h2 class="mb-medium">Inputs</h2>
-    <p class="d-flex g-medium">
+    <p class="d-flex g-medium align-items-center">
         <input type="text" class="form-input form-input--small" placeholder="Small input">
-        <input type="text" class="form-input form-input--small form-input--gray" placeholder="Small Gray input">
-        <input type="text" class="form-input form-input--small form-input--primary" placeholder="Small Primary input">
-        <input type="text" class="form-input form-input--small form-input--secondary" placeholder="Small Secondary input">
-        <input type="text" class="form-input form-input--small form-input--accent" placeholder="Small Accent input">
-    </p>
-    <p class="d-flex g-medium">
-        <input type="text" class="form-input" placeholder="Normal input">
-        <input type="text" class="form-input form-input--gray" placeholder="Gray input">
-        <input type="text" class="form-input form-input--primary" placeholder="Primary input">
-        <input type="text" class="form-input form-input--secondary" placeholder="Secondary input">
-        <input type="text" class="form-input form-input--accent" placeholder="Accent input">
-    </p>
-    <p class="d-flex g-medium">
+        <input type="text" class="form-input form-input--normal" placeholder="Normal input">
         <input type="text" class="form-input form-input--large" placeholder="Large input">
-        <input type="text" class="form-input form-input--large form-input--gray" placeholder="Large Gray input">
-        <input type="text" class="form-input form-input--large form-input--primary" placeholder="Large Primary input">
-        <input type="text" class="form-input form-input--large form-input--secondary" placeholder="Large Secondary input">
-        <input type="text" class="form-input form-input--large form-input--accent" placeholder="Large Accent input">
     </p>
-    <p class="d-flex g-medium">
-        <input type="text" class="form-input form-input--outlined-white" placeholder="Normal input">
-        <input type="text" class="form-input form-input--outlined-gray" placeholder="Gray input">
-        <input type="text" class="form-input form-input--outlined-primary" placeholder="Primary input">
-        <input type="text" class="form-input form-input--outlined-secondary" placeholder="Secondary input">
-        <input type="text" class="form-input form-input--outlined-accent" placeholder="Accent input">
+    <p class="d-flex g-medium align-items-center">
+        <input type="text" class="form-input form-input--custom form-input--small" placeholder="Small input">
+        <input type="text" class="form-input form-input--custom form-input--normal" placeholder="Normal input">
+        <input type="text" class="form-input form-input--custom form-input--large" placeholder="Large input">
     </p>
+    <p class="d-flex g-medium align-items-center">
+        <input type="text" class="form-input form-input--outlined-default form-input--small" placeholder="Small input">
+        <input type="text" class="form-input form-input--outlined-default form-input--normal" placeholder="Normal input">
+        <input type="text" class="form-input form-input--outlined-default form-input--large" placeholder="Large input">
+    </p>
+    <p class="d-flex g-medium align-items-center">
+        <input type="text" class="form-input form-input--outlined-custom form-input--small" placeholder="Small input">
+        <input type="text" class="form-input form-input--outlined-custom form-input--normal" placeholder="Normal input">
+        <input type="text" class="form-input form-input--outlined-custom form-input--large" placeholder="Large input">
+    </p>
+</div>
+<div class="p-large">
+    <h2 class="mb-medium">Input Group</h2>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                <div class="form-input-group">
+                    <input type="text" class="form-input form-input--normal" placeholder="Normal input">
+                    <button class="button button--primary">Submit</button>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-input-group form-input-group--floating">
+                    <input type="text" class="form-input form-input--large" placeholder="Normal input">
+                    <div class="group-button padding-small"><button class="button button--primary">Submit</button></div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-input-group form-input-group--floating">
+                    <input type="text" class="form-input form-input--large text-align-right" placeholder="Normal input">
+                    <div class="group-button padding-small group-button--left"><button class="button button--secondary">Submit</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="p-large">
     <h2 class="mb-medium">Shadows</h2>
@@ -128,8 +148,27 @@
         </div>
     </div>
 </div>
-<div class="product-card">
-    asdasdasd
+<div class="p-large">
+    <h2 class="mb-medium">Crops</h2>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <figure class="crop-box crop-box--1x1">
+                    <img src="https://ionicframework.com/docs/img/demos/thumbnail.svg" alt="">
+                </figure>
+            </div>
+            <div class="col-2">
+                <figure class="crop-box crop-box--2x1">
+                    <img src="https://ionicframework.com/docs/img/demos/thumbnail.svg" alt="">
+                </figure>
+            </div>
+            <div class="col-2">
+                <figure class="crop-box crop-box--3x4">
+                    <img src="https://ionicframework.com/docs/img/demos/thumbnail.svg" alt="">
+                </figure>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

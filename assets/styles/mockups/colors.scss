@@ -3,21 +3,16 @@
 
 .bg, .background{
   @each $color,$value in variables.$colors{
-    &-#{$color} {
-      background-color: get-global-color($color,'normal') !important;
-    }
-    &-#{$color}-hover {
-      background-color: get-global-color($color,'hover') !important;
+    &-#{$color}, &-hover-#{$color}:hover {
+      background-color: get-global-color($color) !important;
     }
   }
 }
 
 .text-color{
   @each $color, $value in variables.$colors{
-    @each $key, $code in $value{
-      &-#{$color}-#{$key},&-hover-#{$color}-#{$key}:hover {
-        color: get-global-color($color,$key) !important;
+      &-#{$color}, &-hover-#{$color}:hover {
+        color: get-global-color($color) !important;
       }
-    }
   }
 }

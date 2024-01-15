@@ -1,9 +1,7 @@
 @use "variables";
 :root {
-  @each $baseName, $color in variables.$colors {
-    @each $modeName, $value in $color {
-      --color-#{$baseName}-#{$modeName}: #{$value};
-    }
+  @each $name, $value in variables.$colors {
+      --color-#{$name}: #{$value};
   }
 
   @each $name, $value in variables.$spaces {
@@ -28,11 +26,27 @@
     --layout-#{$name}: #{$value};
   }
 
+  @each $baseName, $color in variables.$buttonColors {
+    @each $modeName, $value in $color {
+      --button-color-#{$baseName}-#{$modeName}: #{$value};
+    }
+  }
+
+  @each $baseName, $color in variables.$inputColors {
+    @each $modeName, $value in $color {
+      --input-color-#{$baseName}-#{$modeName}: #{$value};
+    }
+  }
+
   @each $name, $value in variables.$buttonSizes {
     --button-size-#{$name}: #{$value};
   }
 
   @each $name, $value in variables.$inputSizes {
     --input-size-#{$name}: #{$value};
+  }
+
+  @each $name, $value in variables.$crops {
+    --crop-#{$name}: #{$value};
   }
 }

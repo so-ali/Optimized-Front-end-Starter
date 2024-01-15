@@ -1,0 +1,25 @@
+@use "../variables";
+@import "../functions";
+
+.crop-box {
+  position: relative;
+  overflow: hidden;
+  padding: 100% 0 0 0;
+
+  img,.crop-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: inherit;
+    max-height: inherit;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+  }
+
+  @each $name, $value in variables.$crops{
+    &--#{$name}{
+      padding-top: get-global-crop($name);
+    }
+  }
+}

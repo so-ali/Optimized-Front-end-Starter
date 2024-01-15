@@ -1,0 +1,12 @@
+@import "../functions";
+
+.row {
+  --bs-gutter-x: #{get-global-layout('gap-x')};
+  --bs-gutter-y: #{get-global-layout('gap-y')};
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: #{get-global-layout('container')};
+  }
+}

@@ -25,13 +25,31 @@
   -webkit-transition: $value;
 }
 
-// Get Global Color.
-@function get-global-color($name,$mode: "normal",$alpha: 1) {
-  @if $alpha < 1 {
-    $color: map-get(variables.$colors, $name);
-    @return rgba(map-get($color, $mode), $alpha)
+// Icon builder.
+@mixin __icon($code: '\f104', $weight: "solid") {
+  $fontFamily: "Font Awesome 6 Free", serif;
+  @if $weight == "solid"{
+    $weight: 900;
   }
-  @return var(--color-#{$name}-#{$mode});
+  @if $weight == "regular"{
+    $weight: 400;
+  }
+  @if $weight == "brand"{
+    $weight: 400;
+    $fontFamily: "Font Awesome 5 Brands";
+  }
+
+  content: $code;
+  font-family: $fontFamily;
+  font-weight: $weight;
+}
+
+// Get Global Color.
+@function get-global-color($name,$alpha: 1) {
+  @if $alpha < 1 {
+    @return rgba(map-get(variables.$colors, $name), $alpha)
+  }
+  @return var(--color-#{$name});
 }
 
 // Get Global Font.
@@ -59,12 +77,35 @@
   @return var(--layout-#{$name});
 }
 
+// Get Global Button Color.
+@function get-global-button-color($name: "normal",$mode: "normal") {
+  @return var(--button-color-#{$name}-#{$mode});
+}
+
 // Get Global Button Size.
 @function get-global-button-size($name: "normal") {
   @return var(--button-size-#{$name});
 }
 
+// Get Global Input Color.
+@function get-global-input-color($name: "normal",$mode: "normal") {
+  @return var(--input-color-#{$name}-#{$mode});
+}
+
 // Get Global Input Size.
 @function get-global-input-size($name: "normal") {
   @return var(--input-size-#{$name});
+}
+
+// Get Global Crop.
+@function get-global-crop($name: "1x1") {
+  @return var(--crop-#{$name});
+}
+
+// Get Global Breakpoint.
+@function get-global-breakpoint($name: "xxl", $mode: "min") {
+  @if $mode == "max"{
+    @return calc(map-get(variables.$breakpoints,$name) - 1px);
+  }
+  @return map-get(variables.$breakpoints,$name);
 }

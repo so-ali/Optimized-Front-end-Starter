@@ -3,11 +3,11 @@ $transitionDelay: 0.2s;
 $transitionLongDelay: 0.4s;
 
 $colors: (
-        "primary": ("normal": #03A9F4, "hover": #039BE5, "text": #fff, "hover-text": #fff),
-        "secondary": ("normal": #FFCA28, "hover": #FFC107, "text": #111, "hover-text": #000),
-        "accent": ("normal": #cb0468, "hover": #b9035f, "text": #fff, "hover-text": #fff),
-        "white": ("normal": #fff, "hover": #eee, "text": #333, "hover-text": #222),
-        "gray": ("normal": #eee, "hover": #ddd, "text": #333, "hover-text": #222),
+        "primary": #03A9F4,
+        "secondary": #FFCA28,
+        "accent": #cb0468,
+        "white": #fff,
+        "gray": #eee,
   // You can add more colors here.
 );
 
@@ -50,6 +50,7 @@ $typography: (
 $layout: (
         "gap-x": 1.5rem,
         "gap-y": 1.5rem,
+        "container": 1320px
 );
 
 $breakpoints: (
@@ -61,14 +62,33 @@ $breakpoints: (
         "xxl": 1400px
 );
 
+$buttonColors: (
+        "default": ("normal": #eee, "hover": #ddd, "text": #333, "hover-text": #222),
+        "primary": ("normal": #03A9F4, "hover": #039BE5, "text": #fff, "hover-text": #fff),
+        "secondary": ("normal": #FFCA28, "hover": #FFC107, "text": #111, "hover-text": #000),
+        "accent": ("normal": #cb0468, "hover": #b9035f, "text": #fff, "hover-text": #fff),
+);
+
 $buttonSizes: (
         "small": 0.25rem 1rem,
         "normal": 0.5rem 1.5rem,
-        "large": 0.625rem 2rem,
+        "large": 1rem 2rem,
+);
+
+$inputColors: (
+        "default": ("normal": #eee, "hover": #ddd, "text": #333, "hover-text": #222),
+        "white": ("normal": #fff, "hover": #eee, "text": #333, "hover-text": #222),
+        "custom": ("normal": #7f93d5, "hover": #6478bb, "text": #fff, "hover-text": #fff),
 );
 
 $inputSizes: (
         "small": 0.25rem 0.75rem,
         "normal": 0.5rem 1rem,
-        "large": 0.625rem 1.25rem,
+        "large": 1rem 1.5rem,
+);
+
+$crops: (
+  "1x1": 100%,
+  "2x1": 50%,
+  "3x4": 75%,
 );
